@@ -1,0 +1,51 @@
+<html onclick="helloworld()">
+    <head>
+
+        <script>
+            const displayMediaOptions = {
+                video: {
+                    displaySurface: "browser",
+                },
+                audio: {
+                    suppressLocalAudioPlayback: false,
+                },
+                preferCurrentTab: false,
+                selfBrowserSurface: "exclude",
+                systemAudio: "include",
+                surfaceSwitching: "include",
+                monitorTypeSurfaces: "include",
+            };
+
+
+            async function startCapture(displayMediaOptions) {
+
+                console.log("HGELLO!");
+                try{
+                    vidElem = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+                }catch(err){
+                    console.log(err);
+                }
+            }
+
+            function helloworld(){
+                startCapture();
+            }
+
+
+
+        </script>
+
+        <style>
+            html, body{
+                margin: 0px;
+
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+
+    </body>
+</html>

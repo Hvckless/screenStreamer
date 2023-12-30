@@ -1,0 +1,16 @@
+{
+  "name": "nodestreamer",
+  "version": "1.0.0",
+  "description": "hello world!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "https": "^1.0.0",
+    "mime": "^4.0.1"
+  }
+}
