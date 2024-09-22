@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+            const displayMediaOptions = {
+                video: {
+                    displaySurface: "browser",
+                },
+                audio: {
+                    echoCancellation: true,
+                    noiseSuppression: true,
+                    sampleRate: 44100,
+                    suppressLocalAudioPlayback: true,
+                },
+                preferCurrentTab: false,
+                selfBrowserSurface: "exclude",
+                systemAudio: "include",
+                surfaceSwitching: "include",
+                monitorTypeSurfaces: "include",
+            };
+
+            async function startCapture(displayMediaOptions) {
+                let captureStream = null;
+
+                try {
+                    videoElement = document.querySelector("video")
+                    console.log(videoElement)
+                    videoElement.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+                } catch (err) {
+                    console.error(`Error: ${err}`);
+                }
+                return captureStream;
+            }
+
+
+
+            
+        </script>
+    </head>
+    <body>
+        <div style="width: 100px; height: 100px; background-color: black;" onclick="startCapture()"></div>
+
+
+        <video autoplay></video>
+    </body>
+</html>
